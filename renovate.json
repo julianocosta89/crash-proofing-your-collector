@@ -11,8 +11,8 @@
   "customManagers": [
     {
       "customType": "regex",
-      "fileMatch": [
-        "^run_test\\.sh$"
+      "managerFilePatterns": [
+        "/^run_test\\.sh$/"
       ],
       "matchStrings": [
         "ghcr\\.io/open-telemetry/opentelemetry-collector-contrib/telemetrygen:v?(?<currentValue>[0-9]+\\.[0-9]+\\.[0-9]+)"
@@ -26,7 +26,7 @@
     {
       "matchManagers": [
         "docker-compose",
-        "regex"
+        "custom.regex"
       ],
       "groupName": "docker compose deps"
     },
