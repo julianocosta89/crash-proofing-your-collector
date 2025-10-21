@@ -16,7 +16,7 @@ services:
 
   otelcol-batch_processor:
     container_name: otel-collector
-    image: otel/opentelemetry-collector-contrib:0.137.0
+    image: otel/opentelemetry-collector-contrib:0.138.0
     restart: no
     command: 
       - --config=/etc/otel-collector-config.yaml
@@ -36,7 +36,7 @@ services:
 
   otelcol-otlp_batcher:
     container_name: otel-collector
-    image: otel/opentelemetry-collector-contrib:0.137.0
+    image: otel/opentelemetry-collector-contrib:0.138.0
     restart: no
     command: 
       - --config=/etc/otel-collector-config.yaml
