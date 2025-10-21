@@ -15,10 +15,9 @@
         "^run_test\\.sh$"
       ],
       "matchStrings": [
-        "ghcr\\.io/open-telemetry/opentelemetry-collector-contrib/telemetrygen:v?(?<currentValue>[0-9]+\\.[0-9]+\\.[0-9]+)"
+        "\\s+(?<depName>ghcr\\.io/open-telemetry/opentelemetry-collector-contrib/telemetrygen):v(?<currentValue>[0-9]+\\.[0-9]+\\.[0-9]+)"
       ],
       "datasourceTemplate": "docker",
-      "depNameTemplate": "ghcr.io/open-telemetry/opentelemetry-collector-contrib/telemetrygen",
       "versioningTemplate": "semver"
     }
   ],
