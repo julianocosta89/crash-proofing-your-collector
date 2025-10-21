@@ -1,0 +1,29 @@
+extensions:
+  file_storage: {}
+
+receivers:
+  otlp:
+    protocols:
+      grpc:
+        endpoint: ${env:OTEL_COLLECTOR_HOST}:${env:OTEL_COLLECTOR_PORT_GRPC}
+
+exporters:
+  debug: {}
+  otlp:
+    endpoint: "jaeger:4317"
+    tls:
+      insecure: true
+    sending_queue:
+      storage: file_storage
+      sizer: "items"
+      queue_size: 10000
+      batch:
+        min_size: 10000
+        flush_timeout: 30s
+
+service:
+  extensions: [file_storage]
+  pipelines:
+    traces:
+      receivers: [otlp]
+      exporters: [debug, otlp]

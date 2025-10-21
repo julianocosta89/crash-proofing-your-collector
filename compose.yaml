@@ -1,0 +1,55 @@
+networks:
+  default:
+    name: crash-proofing
+    driver: bridge
+
+services:
+  jaeger:
+    image: jaegertracing/jaeger:2.11.0
+    container_name: jaeger
+    ports:
+      - 16686:16686 # Jaeger UI
+      - 4317        # OTLP gRPC endpoint
+    profiles:
+      - batch_processor
+      - otlp_batcher
+
+  otelcol-batch_processor:
+    container_name: otel-collector
+    image: otel/opentelemetry-collector-contrib:0.137.0
+    restart: no
+    command: 
+      - --config=/etc/otel-collector-config.yaml
+    volumes:
+      - ./otelcol-batch_processor/otelcol-config.yaml:/etc/otel-collector-config.yaml
+      - ./otelcol-batch_processor/file_storage:/var/lib/otelcol/file_storage
+    ports:
+      - 4317 # OTLP gRPC
+    environment:
+      - OTEL_COLLECTOR_HOST=otel-collector
+      - OTEL_COLLECTOR_PORT_GRPC=4317
+    depends_on:
+      jaeger:
+        condition: service_started
+    profiles:
+      - batch_processor
+
+  otelcol-otlp_batcher:
+    container_name: otel-collector
+    image: otel/opentelemetry-collector-contrib:0.137.0
+    restart: no
+    command: 
+      - --config=/etc/otel-collector-config.yaml
+    volumes:
+      - ./otelcol-otlp_batcher/otelcol-config.yaml:/etc/otel-collector-config.yaml
+      - ./otelcol-otlp_batcher/file_storage:/var/lib/otelcol/file_storage
+    ports:
+      - 4317 # OTLP gRPC
+    environment:
+      - OTEL_COLLECTOR_HOST=otel-collector
+      - OTEL_COLLECTOR_PORT_GRPC=4317
+    depends_on:
+      jaeger:
+        condition: service_started
+    profiles:
+      - otlp_batcher
