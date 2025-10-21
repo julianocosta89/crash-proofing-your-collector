@@ -2,7 +2,7 @@
 
 This repository demonstrates the importance of batching data and how that affects
 persistent queuing in OpenTelemetry Collectors. This repository is a companion
-for the talk [Crash-Proofing Your OpenTelemetry Collector][1], which compares
+for the talk Crash-Proofing Your OpenTelemetry Collector, which compares
 two different approaches for handling batches with persistent queues.
 
 ## Overview
