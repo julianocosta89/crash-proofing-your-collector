@@ -3,10 +3,6 @@
   "extends": [
     "config:recommended"
   ],
-  "enabledManagers": [
-    "github-actions", 
-    "docker-compose"
-  ],
   "labels": [
     "dependencies"
   ],
