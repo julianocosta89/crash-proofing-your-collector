@@ -8,10 +8,25 @@
   ],
   "assigneesFromCodeOwners": true,
   "reviewersFromCodeOwners": true,
+  "customManagers": [
+    {
+      "customType": "regex",
+      "fileMatch": [
+        "^run_test\\.sh$"
+      ],
+      "matchStrings": [
+        "ghcr\\.io/open-telemetry/opentelemetry-collector-contrib/telemetrygen:v?(?<currentValue>[0-9]+\\.[0-9]+\\.[0-9]+)"
+      ],
+      "datasourceTemplate": "docker",
+      "depNameTemplate": "ghcr.io/open-telemetry/opentelemetry-collector-contrib/telemetrygen",
+      "versioningTemplate": "semver"
+    }
+  ],
   "packageRules": [
     {
       "matchManagers": [
-        "docker-compose"
+        "docker-compose",
+        "regex"
       ],
       "groupName": "docker compose deps"
     },

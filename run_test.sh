@@ -80,15 +80,17 @@ docker kill otel-collector
 echo "Collector killed."
 
 echo ""
-echo "Navigate to the backend to view that no data was sent."
+echo "Navigate to the Jaeger to view that no data was sent."
 echo "Jaeger: http://localhost:16686"
 
 echo ""
-echo "Whenever ready, run the following command to start the Collector again (add \`-d\` to run in background):"
-echo "docker compose --profile ${TEST_PARAM} up otelcol-${TEST_PARAM}"
+echo "====================================="
+echo "Whenever ready, run the following command to start the Collector again:"
+echo "docker compose --profile ${TEST_PARAM} up otelcol-${TEST_PARAM} -d"
+echo "====================================="
 
 echo ""
-echo "After the Collector is running again, navigate to the backend to view if you get any traces."
+echo "After the Collector is running again, navigate to the Jaeger to view if you get any traces."
 
 echo ""
 echo ""
