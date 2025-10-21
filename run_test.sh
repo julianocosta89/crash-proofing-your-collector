@@ -14,6 +14,17 @@ if [ -z "$TEST_PARAM" ]; then
     exit 1
 fi
 
+# Validate parameter against allowed values
+ALLOWED_PARAMS=("batch_processor" "otlp_batcher" "cleanup")
+if [[ ! " ${ALLOWED_PARAMS[@]} " =~ " ${TEST_PARAM} " ]]; then
+    echo "Error: Invalid test parameter '$TEST_PARAM'"
+    echo "Available tests:"
+    echo "  - batch_processor"
+    echo "  - otlp_batcher"
+    echo "  - cleanup"
+    exit 1
+fi
+
 # Handle cleanup
 if [ "$TEST_PARAM" = "cleanup" ]; then
     echo "====================================="
