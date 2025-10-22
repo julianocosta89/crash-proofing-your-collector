@@ -1,4 +1,8 @@
-# Crash-Proofing Your OpenTelemetry Collector
+<!-- markdownlint-disable-next-line -->
+# <a href="assets/otelio_collector.png"><img src="assets/otelio_collector.png" alt="OTelio Collector" height="30px" align="left" style="margin-right: 10px;"></a>Crash-Proofing Your OpenTelemetry Collector
+
+[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg?color=red)](https://github.com/julianocosta89/smells-like-clean-telemetry/blob/main/LICENSE)
+[![Daily Renovate](https://github.com/julianocosta89/crash-proofing-your-collector/actions/workflows/renovate-daily.yml/badge.svg)](https://github.com/julianocosta89/crash-proofing-your-collector/actions/workflows/renovate-daily.yml)
 
 This repository demonstrates the importance of batching data and how that affects
 persistent queuing in OpenTelemetry Collectors. This repository is a companion
