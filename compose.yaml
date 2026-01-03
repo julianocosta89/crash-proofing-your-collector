@@ -5,7 +5,7 @@ networks:
 
 services:
   jaeger:
-    image: jaegertracing/jaeger:2.13.0
+    image: jaegertracing/jaeger:2.14.1
     container_name: jaeger
     ports:
       - 16686:16686 # Jaeger UI
