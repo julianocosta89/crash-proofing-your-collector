@@ -5,7 +5,7 @@ networks:
 
 services:
   jaeger:
-    image: jaegertracing/jaeger:2.14.1
+    image: jaegertracing/jaeger:2.15.1
     container_name: jaeger
     ports:
       - 16686:16686 # Jaeger UI
@@ -16,7 +16,7 @@ services:
 
   otelcol-batch_processor:
     container_name: otel-collector
-    image: otel/opentelemetry-collector-contrib:0.144.0
+    image: otel/opentelemetry-collector-contrib:0.145.0
     restart: no
     command: 
       - --config=/etc/otel-collector-config.yaml
@@ -36,7 +36,7 @@ services:
 
   otelcol-otlp_batcher:
     container_name: otel-collector
-    image: otel/opentelemetry-collector-contrib:0.144.0
+    image: otel/opentelemetry-collector-contrib:0.145.0
     restart: no
     command: 
       - --config=/etc/otel-collector-config.yaml
