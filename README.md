@@ -3,6 +3,7 @@
 
 [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg?color=red)](https://github.com/julianocosta89/smells-like-clean-telemetry/blob/main/LICENSE)
 [![Daily Renovate](https://github.com/julianocosta89/crash-proofing-your-collector/actions/workflows/renovate-daily.yml/badge.svg)](https://github.com/julianocosta89/crash-proofing-your-collector/actions/workflows/renovate-daily.yml)
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fjulianocosta89%2Fcrash-proofing-your-collector.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fjulianocosta89%2Fcrash-proofing-your-collector?ref=badge_shield)
 
 This repository demonstrates the importance of batching data and how that affects
 persistent queuing in OpenTelemetry Collectors. This repository is a companion
