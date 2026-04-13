@@ -166,6 +166,3 @@ This project is open source and available under the Apache License 2.0.
 [3]: https://github.com/open-telemetry/opentelemetry-collector/tree/main/processor/batchprocessor
 [4]: https://github.com/open-telemetry/opentelemetry-collector/tree/main/exporter/exporterhelper
 [5]: https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/extension/storage
-
-
-[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fjulianocosta89%2Fcrash-proofing-your-collector.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Fjulianocosta89%2Fcrash-proofing-your-collector?ref=badge_large)
