@@ -68,7 +68,7 @@ echo "Sending 100 traces to the Collector"
 
 # Send 100 traces
 docker run --rm --network=crash-proofing \
-    ghcr.io/open-telemetry/opentelemetry-collector-contrib/telemetrygen:v0.163.0 \
+    ghcr.io/open-telemetry/opentelemetry-collector-contrib/telemetrygen:v0.164.1 \
     traces \
     --otlp-insecure \
     --otlp-endpoint otel-collector:4317 \
